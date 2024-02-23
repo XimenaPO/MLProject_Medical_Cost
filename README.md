@@ -39,4 +39,3 @@ CatBoostRegressor()
 MÉTRICAS UTILIZADAS: 
 R2, RMSE.
 
-
