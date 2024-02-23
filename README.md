@@ -1,4 +1,5 @@
-# MLProyect_Medical_Cost
+PROYECTO DE MACHINE LEARNING - REGRESIÓN LINEAL 
+
 Proyecto de Machine Learning para predecir mediante modelos el costo médico de un seguro, según características personales.
 
 INTRODUCCIÓN
