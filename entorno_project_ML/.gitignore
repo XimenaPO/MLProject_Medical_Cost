@@ -1,14 +1,2 @@
-# Ignorar directorio del entorno virtual
-entorno_project_ML/
-
-# Ignorar archivos de configuración de entorno virtual
-.Python
-Scripts/
-include/
-Lib/
-tcl/
-Tools/
-pyvenv.cfg
-__pycache__/
-
+*
 
