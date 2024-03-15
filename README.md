@@ -22,7 +22,7 @@ Posteriormente, en base al análisis realizado, haremos la limpieza correspondie
 
 FEATURE ENGINEERING:
 
-Y por último, en la etapa de Machine Learning, en primer lugar, realizaremos las transformaciones necesarias a las variables (Feature Engineering) como ser: convertir las variables categóricas en numéricas, utilizando distintos métodos como mapeos, Label Encoder; aplicaremos el logaritmo a las características que correspondan para obtener una distribución normal o escalado mediante Standard Scaler con el fin de tener todas las variables en una misma escala, para un mejor rendimiento del modelo.
+En la etapa de Machine Learning, en primer lugar, realizaremos las transformaciones necesarias a las variables (Feature Engineering) como ser: convertir las variables categóricas en numéricas, utilizando distintos métodos como mapeos, Label Encoder; aplicaremos el logaritmo a las características que correspondan para obtener una distribución normal o escalado mediante Standard Scaler con el fin de tener todas las variables en una misma escala, para un mejor rendimiento del modelo.
 
 MODELOS DE REGRESIÓN - CROSS VALIDATION - GRIDSEARCH PARA BÚSQUEDA DE HIPERPARÁMETROS
 
@@ -45,5 +45,5 @@ CatBoostRegressor()
 
 MÉTRICAS UTILIZADAS: 
 
-R2, RMSE.
+R2, RMSE y MAE.
 
