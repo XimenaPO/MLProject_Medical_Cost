@@ -1,7 +1,6 @@
 # Ignorar entornos virtuales de Python
 venv/
 entorno_project_ML/
-entorno_flask/
 
 # Ignorar archivos de información de CatBoost
 catboost_info/
