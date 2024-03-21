@@ -71,31 +71,6 @@ y_train = scaler_y.fit_transform(y_train.values.reshape(-1, 1)).flatten()
 y_test = scaler_y.transform(y_test.values.reshape(-1, 1)).flatten()
 #-----------------------------------------------------------------------------
 
-# BÚSQUEDA DE MEJORES HIPERPARÁMETROS
-# Instanciar el modelo
-modelo_gradientboosting = GradientBoostingRegressor()
-
-# Parámetros de búsqueda
-parametros_gbr = {
-    'learning_rate': [0.01, 0.1, 0.5],
-    'n_estimators': [50, 100, 200],
-    'max_depth': [3, 5, 7]
-}
-
-# Búsqueda de mejores hiperparámetros mediante GridSearchCV
-grid_search_gbr = GridSearchCV(modelo_gradientboosting, parametros_gbr, cv=3, scoring='r2', n_jobs=-1)
-
-# Entrenar modelo
-grid_search_gbr.fit(X_train, y_train)
-
-# Imprimir mejores hiperparámetros encontrados 
-print(">  Mejores hiperparámetros encontrados:")
-print(grid_search_gbr.best_params_)
-print('------------------------------------------------')
-print(">  Mejor puntuación de validación cruzada:")
-print(round(grid_search_gbr.best_score_,2))
-#-----------------------------------------------------------------------------
-
 # ENTRENAMIENTO DE MODELO CON MEJORES HIPERPARÁMETROS Y PREDICCIONES
 # Instanciar modelo con hiperparámetros
 my_model = GradientBoostingRegressor(learning_rate=0.1,
