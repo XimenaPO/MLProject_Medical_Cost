@@ -3,4 +3,10 @@ venv/
 entorno_project_ML/
 
 # Ignorar archivos de información de CatBoost
-catboost_info/
+src/notebooks/catboost_info/
+
+# Ignorar la carpeta de configuración
+src/app/instance/
+
+# Ignorar archivos de caché de Python
+src/app/__pycache__/
