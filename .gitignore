@@ -5,6 +5,12 @@ entorno_project_ML/
 # Ignorar archivos de información de CatBoost
 src/notebooks/catboost_info/
 
+# Ignorar notebook de borrador proyecto
+src/notebooks/borrador.ipynb
+
+# Ignorar carpeta Streamlit
+src/app_streamlit/
+
 # Ignorar la carpeta de configuración
 src/app/instance/
 
