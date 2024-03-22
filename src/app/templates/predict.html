@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimación del Costo Médico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            background-image: url(https://images.pexels.com/photos/1128317/pexels-photo-1128317.jpeg);
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 32px;
+            font-weight: 600;
+            color: #00695c;
+        }
+        /* Estilos para el nuevo formulario */
+        .phone-input {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .phone-label {
+            display: block;
+            margin-top: 40px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .phone-input input {
+            width: calc(40% - 5px); /* Ajusta el ancho del input */
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .phone-input button {
+            border-top: 40px;
+            background-color: #009688;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 32px;
+        }
+        .phone-input button:hover {
+            background-color: #00695c;
+        }
+
+        .another-estimation-link a {
+            margin-top: 32px;
+            display: block;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #004d40;
+            text-decoration: underline;
+        }
+        .another-estimation-link a:hover {
+            color: #00897b; 
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Estimación del Costo Médico</h1>
+        <p>En base a los datos proporcionados, el costo de la cobertura anual sería de:</p>
+        <p class="result">€ 2.490,99</p>
+        <p>¡Gracias por utilizar nuestro servicio!</p>
+        
+        <!-- Nuevo formulario para el número de teléfono -->
+        <form class="phone-input" action="/contact" method="post">
+            <label for="telefono" class="phone-label">Para ser contactado, por favor deje su número de teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+            <button type="submit">Enviar</button>
+        </form>
+        <div class="another-estimation-link">
+            <a href="/nueva-estimacion">Realiza otra estimación</a>
+        </div>
+        
+    
+    </div>
+</body>
+</html>
+
