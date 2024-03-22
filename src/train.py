@@ -9,12 +9,6 @@ warnings.filterwarnings('ignore')
 
 import pickle
 
-# Visualización
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-# Correlaciones - Prueba de hipótesis
-from scipy.stats import pearsonr, ttest_ind, f_oneway
 
 # División de datos 
 from sklearn.model_selection import train_test_split, cross_val_score, cross_val_predict, cross_validate
@@ -25,23 +19,14 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler, LabelEncoder
 # Métricas
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error, mean_absolute_percentage_error, make_scorer
 
-# Búsqueda hiperparámetros
-from sklearn.model_selection import GridSearchCV
-
-# Modelos
-from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet
-from sklearn.svm import SVR
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.neighbors import KNeighborsRegressor
+# Modelo
 from sklearn.ensemble import GradientBoostingRegressor
-from xgboost import XGBRegressor
-from lightgbm import LGBMRegressor
-from catboost import CatBoostRegressor
+
 #-----------------------------------------------------------------------------
 
 # INSTANCIAR EN UNA VARIABLE EL DATASET NUMÉRICO
-df = pd.read_csv('../src/data/processed/df_numerico_para_F_E.csv')
+df = pd.read_csv('C:/Users/Ximena/Documents/INFORMÁTICA/Bootcamp_Data_Science/MLProject_Medical_Cost/src/data/processed/df_numerico_para_F_E.csv', index_col=0)
+
 #-----------------------------------------------------------------------------
 
 # DIVISIÓN DE DATOS
@@ -94,7 +79,7 @@ rmse_test = mean_squared_error(y_test, predicciones_test, squared=False)
 
 
 # Guardar el modelo
-with open('../models/my_model.pkl', 'wb') as f:
+with open('C:/Users/Ximena/Documents/INFORMÁTICA/Bootcamp_Data_Science/MLProject_Medical_Cost/src/models/my_model.pkl', 'wb') as f:
     pickle.dump(my_model, f)
 #-----------------------------------------------------------------------------
 
