@@ -20,15 +20,17 @@ En cuanto al EDA, vamos a analizar mediante funciones y gráficos la cardinalida
 
 Posteriormente, en base al análisis realizado, haremos la limpieza correspondiente según haya valores nulos, traducciones, duplicados, etc.
 
+Asimismo, se ha realizado un exhaustivo análisis univariante y bivariante con sus  conclusiones y comentarios, agregando pruebas de hipótesis según correspondiera, como el Coeficiente de Correlación de Pearson, Prueba t de Student y Prueba de Anova. 
+
 FEATURE ENGINEERING:
 
 En la etapa de Machine Learning, en primer lugar, realizaremos las transformaciones necesarias a las variables (Feature Engineering) como ser: convertir las variables categóricas en numéricas, utilizando distintos métodos como mapeos, Label Encoder; aplicaremos el logaritmo a las características que correspondan para obtener una distribución normal o escalado mediante Standard Scaler con el fin de tener todas las variables en una misma escala, para un mejor rendimiento del modelo.
 
 MODELOS DE REGRESIÓN - CROSS VALIDATION - GRIDSEARCH PARA BÚSQUEDA DE HIPERPARÁMETROS
 
-Posteriormente, analizaremos cuál modelo de Regresión generaliza mejor, utilizando 'Cross Validation' y también 'GridSearch', para encontrar los mejores hiperparámetros respecto a dichos modelos. 
+Posteriormente, analizaremos cuál modelo de Regresión generaliza mejor, utilizando 'Cross Validation' y también 'GridSearchCV', para encontrar los mejores hiperparámetros respecto a dichos modelos. 
 
-Por último, haremos las predicciones correspondientes en base a los mejores modelos y utilizaremos las métricas que se utilizan en estos problemas de regresión como por ejemplo, el Coeficiente de Determinación (R2), la Raíz del Error Cuadrático Medio (RMSE), para saber el rendimiento del modelo y cómo éste generaliza los nuevos datos.
+Por último, haremos las predicciones correspondientes en base a los mejores modelos y utilizaremos las métricas que se utilizan en estos problemas de regresión como por ejemplo, el Coeficiente de Determinación (R2), la Raíz del Error Cuadrático Medio (RMSE) y el Error Absoluto Medio (MAE) para saber el rendimiento del modelo y cómo éste generaliza los nuevos datos.
 
 MODELOS DE APRENDIZAJE SUPERVISADO UTILIZADOS: 
 
@@ -43,7 +45,15 @@ XGBRegressor(),
 LGBMRegressor(),
 CatBoostRegressor()
 
+
 MÉTRICAS UTILIZADAS: 
 
 R2, RMSE y MAE.
 
+
+APLICACIÓN FLASK: 
+
+Para finalizar el proyecto, utilicé Flask con el objeto de productivizar mi modelo, lo que significa que lo hice accesible a través de una aplicación web. 
+Para ello, también se utilizaron archivos HTML con el fin de renderizar el diseño.
+
+Por último, mediante la app creada con Flask, puede obtenerse la predicción del costo médico utilizando el modelo entrenado. Para ello, debe ingresarse en el formulario que aparece en la web, las características que se solicitan para realizar la predicción. 
