@@ -85,7 +85,7 @@
     <div class="container">
         <h1>Estimación del Costo Médico</h1>
         <p>En base a los datos proporcionados, el costo de la cobertura anual sería de:</p>
-        <p class="result">€ 2.490,99</p>
+        <p class="result">€ {{ '%.2f' | format(costo_predicho) }}</p>
         <p>¡Gracias por utilizar nuestro servicio!</p>
         
         <!-- Nuevo formulario para el número de teléfono -->

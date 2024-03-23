@@ -59,8 +59,13 @@ def evaluar_modelo(modelo, X_test, y_test, scaler_X, scaler_y):
     
     return test_r2
 
+# Obtener el directorio del script actual
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Construir la ruta al archivo CSV utilizando os.path.join()
+ruta_datos = os.path.join(script_dir, '..', 'data', 'processed', 'df_numerico_para_F_E.csv')
+
 # Cargar datos
-ruta_datos = r'C:\Users\Ximena\Documents\INFORMÁTICA\Bootcamp_Data_Science\MLProject_Medical_Cost\src\data\processed\df_numerico_para_F_E.csv'
 X, y = cargar_datos(ruta_datos)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
@@ -71,11 +76,11 @@ X_train_scaled, y_train_scaled, scaler_X, scaler_y = preprocesar_datos(X_train, 
 modelo = entrenar_modelo(X_train_scaled, y_train_scaled)
 
 # Guardar modelo en la misma ubicación que produccion.py
-ruta_modelo = os.path.join(os.path.dirname(__file__), 'mi_modelo_regresion.pkl')
+ruta_modelo = os.path.join(script_dir, 'mi_modelo_regresion.pkl')
 guardar_modelo(modelo, ruta_modelo)
 
 # Guardar transformadores en la misma ubicación que produccion.py
-ruta_transformadores = os.path.join(os.path.dirname(__file__), 'transformadores.pkl')
+ruta_transformadores = os.path.join(script_dir, 'transformadores.pkl')
 guardar_transformadores(scaler_X, scaler_y, ruta_transformadores)
 
 # Evaluar modelo

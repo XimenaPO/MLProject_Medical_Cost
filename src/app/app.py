@@ -1,24 +1,35 @@
 import warnings
 from flask import Flask, request, render_template
+from flask_caching import Cache
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 import pickle
 import os
 
-app = Flask(__name__)
-
-# Cargar modelo
+# Definir la función para cargar el modelo
 def cargar_modelo(ruta):
     with open(ruta, 'rb') as f:
         modelo = pickle.load(f)
     return modelo
 
-# Cargar transformadores de datos
+# Definir la función para cargar transformadores de datos
 def cargar_transformadores(ruta):
     with open(ruta, 'rb') as f:
         scaler_X, scaler_y = pickle.load(f)
     return scaler_X, scaler_y
+
+app = Flask(__name__)
+
+# Deshabilitar el caché
+cache = Cache(app, config={'CACHE_TYPE': 'simple'})
+app.config['CACHE_TYPE'] = 'null'
+
+# Cargar modelo y transformadores
+ruta_modelo = os.path.join(os.path.dirname(__file__), 'mi_modelo_regresion.pkl')
+ruta_transformadores = os.path.join(os.path.dirname(__file__), 'transformadores.pkl')
+modelo = cargar_modelo(ruta_modelo)
+scaler_X, scaler_y = cargar_transformadores(ruta_transformadores)
 
 # Preprocesar entrada de usuario
 def preprocesar_entrada(datos, scaler_X):
@@ -63,10 +74,4 @@ def predict():
     return render_template('predict.html', costo_predicho=costo_predicho)
 
 if __name__ == '__main__':
-    ruta_modelo = os.path.join(os.path.dirname(__file__), 'mi_modelo_regresion.pkl')
-    ruta_transformadores = os.path.join(os.path.dirname(__file__), 'transformadores.pkl')
-    
-    modelo = cargar_modelo(ruta_modelo)
-    scaler_X, scaler_y = cargar_transformadores(ruta_transformadores)
-    
     app.run(debug=True)
