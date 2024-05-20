@@ -1,6 +1,6 @@
 PROYECTO DE MACHINE LEARNING - REGRESIÓN LINEAL 
 
-Proyecto de Machine Learning para predecir mediante modelos el costo médico de un seguro, según características personales.
+Análsis Exploratorio de Datos (EDA) + Proyecto de Machine Learning para predecir mediante modelos el costo médico de un seguro, según características personales.
 
 INTRODUCCIÓN:
 
