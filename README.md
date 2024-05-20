@@ -8,6 +8,8 @@ El presente proyecto tiene como objetivo predecir los costos médicos según det
 
 Dichas predicciones serán realizadas aplicando Machine Learning, y específicamente modelos de Regresión. Anteriormente haré un EDA para analizar previamente el dataset.
 
+Además, en el repositorio se encuentra la presentación del proyecto realizada en PowerPoint, para ser expuesto en el Bootcamp. Por ello, es que se aclara que, la misma solo contiene ideas específicas e importantes, ya que las explicaciones pertinentes las he relatado y explicado de manera oral. 
+
 El DataFrame contiene 1338 filas y 7 columnas, sin valores nulos.
 
 OBJETIVO:
